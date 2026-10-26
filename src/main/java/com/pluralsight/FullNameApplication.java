@@ -9,18 +9,23 @@ public class FullNameApplication {
         System.out.println("Please enter your name.");
 
         System.out.print("First name: ");
-        String firstName = myScanner.nextLine();
+        String firstName = myScanner.nextLine().trim();
 
         System.out.print("Middle Initial: ");
-        String midInitial = myScanner.nextLine();
+        String midName = myScanner.nextLine().trim();
 
         System.out.print("Last name: ");
-        String lastName = myScanner.nextLine();
+        String lastName = myScanner.nextLine().trim();
 
         System.out.print("Suffix: ");
-        String suffix = myScanner.nextLine();
+        String suffix = myScanner.nextLine().trim();
 
-        System.out.println("Full name: "+ firstName +" "+ midInitial +" "+ lastName +", "+ suffix);
+        String fullName = firstName;
+
+        if (!midName.isEmpty()){
+            fullName += " " + midName.charAt(0);
+        }
+
 
         myScanner.close();
     }
